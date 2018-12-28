@@ -73,7 +73,7 @@ namespace discord_rpc_vs
             addCommand(DisplayTimestampId, (s, e) => Config.DisplayTimestamp ^= true);
 
             OleMenuCommand resetTimestampCmd = addCommand(ResetTimestampId, (s, e) => Config.ResetTimestamp ^= true);
-            resetTimestampCmd.BeforeQueryStatus += (s, e) => ((OleMenuCommand)s).Visible = Config.DisplayTimestamp;
+            resetTimestampCmd.BeforeQueryStatus += (s, e) => ((OleMenuCommand)s).Enabled = Config.DisplayTimestamp;
 
             addCommand(ToggleImagePositionId, (s, e) => Config.DisplayFileTypeAsLargeImage ^= true);
         }
